@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Snake Oil Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: #0f131a;
+            color: #f8fafc;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .post-card {
+            width: min(632px, calc(100vw - 28px));
+            padding: 32px 28px 18px;
+            border: 2px solid #333844;
+            border-radius: 34px;
+            background: #1d1e25;
+            box-shadow: 0 22px 70px rgba(0, 0, 0, 0.38);
+        }
+
+        .logo {
+            width: 62px;
+            height: 62px;
+            display: grid;
+            place-items: center;
+            margin: 0 0 30px 5px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 34% 23%, rgba(28, 101, 95, 0.8), transparent 30%),
+                #062530;
+            color: #ffffff;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 0.86;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            max-width: 540px;
+            margin: 0 0 18px;
+            font-size: clamp(36px, 6vw, 42px);
+            line-height: 1.22;
+            letter-spacing: 0;
+        }
+
+        .tags {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .tag {
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            padding: 0 16px;
+            border: 2px solid #3a4050;
+            border-radius: 15px;
+            color: #8790a5;
+            font-size: 27px;
+            line-height: 1;
+        }
+
+        .meta {
+            margin-bottom: 18px;
+            color: #a9b3ca;
+            font-size: 26px;
+            line-height: 1.2;
+        }
+
+        .comparison {
+            min-height: 315px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+            align-items: start;
+            padding: 19px 38px 28px;
+            border-radius: 15px;
+            background: #ffffff;
+            color: #1a120d;
+            overflow: hidden;
+        }
+
+        .column-title {
+            margin-bottom: 25px;
+            color: #101010;
+            font-size: 16px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pill {
+            width: min(205px, 100%);
+            height: 66px;
+            display: grid;
+            place-items: center;
+            border: 4px solid #6c3f20;
+            background: #f3c678;
+            color: #5a3216;
+            font-size: 28px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-shadow: 0 1px rgba(255, 255, 255, 0.25);
+            box-shadow: inset 0 3px rgba(255, 255, 255, 0.3), 0 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .pill.top {
+            border-radius: 38px 38px 11px 11px;
+        }
+
+        .pill.middle {
+            height: 78px;
+            margin-top: -2px;
+            border-radius: 19px;
+            background: #a75e32;
+            color: #fff8ed;
+        }
+
+        .pill.bottom {
+            margin-top: -2px;
+            border-radius: 11px 11px 36px 36px;
+        }
+
+        .ai .pill.middle {
+            height: 28px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            align-items: center;
+            gap: 18px;
+            margin-top: 20px;
+            color: #c2c9da;
+        }
+
+        .action {
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .action svg {
+            width: 34px;
+            height: 34px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @media (max-width: 560px) {
+            .post-card {
+                padding: 24px 16px 14px;
+                border-radius: 26px;
+            }
+
+            .logo {
+                margin-bottom: 24px;
+            }
+
+            .tag {
+                height: 38px;
+                font-size: 20px;
+            }
+
+            .meta {
+                font-size: 20px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding: 18px;
+            }
+
+            .actions {
+                gap: 8px;
+            }
+
+            .action {
+                gap: 6px;
+                font-size: 18px;
+            }
+
+            .action svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="post-card" aria-label="Article preview card">
+        <div class="logo">AI<br>SNAKE<br>OIL</div>
+
+        <h1>Why AI hasn't replaced software engineers, and won't</h1>
+
+        <div class="tags" aria-label="Article tags">
+            <span class="tag">#automation</span>
+            <span class="tag">#productivity</span>
+            <span class="tag">+2</span>
+        </div>
+
+        <div class="meta">Yesterday &bull; 21m read time</div>
+
+        <section class="comparison" aria-label="Traditional process compared with AI process">
+            <div>
+                <div class="column-title">Traditional</div>
+                <div class="stack">
+                    <div class="pill top">Decide</div>
+                    <div class="pill middle">Execute</div>
+                    <div class="pill bottom">Deliver</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="column-title">With AI</div>
+                <div class="stack ai">
+                    <div class="pill top">Decide</div>
+                    <div class="pill middle">Execute</div>
+                    <div class="pill bottom">Deliver</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="actions" aria-label="Post actions">
+            <div class="action">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V5"/><path d="m5 12 7-7 7 7"/><path d="M5 21h14"/></svg>
+                <span>90</span>
+            </div>
+            <div class="action">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v16"/><path d="m5 12 7 7 7-7"/></svg>
+            </div>
+            <div class="action">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
+                <span>19</span>
+            </div>
+            <div class="action">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"/><path d="m8.5 14.5-2 6 5.5-3 5.5 3-2-6"/></svg>
+            </div>
+            <div class="action">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"/></svg>
+            </div>
+            <div class="action">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
